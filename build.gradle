@@ -1,0 +1,25 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.3.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.cy'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+ 
+ext {
+	set('springCloudVersion', '1.0.1.RELEASE')
+}
+
+dependencies {
+	implementation 'org.springframework.cloud:spring-cloud-function-web:1.0.1.RELEASE'
+    implementation 'org.springframework.cloud:spring-cloud-function-adapter-aws:1.0.1.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
